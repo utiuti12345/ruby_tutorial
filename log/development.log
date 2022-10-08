@@ -1,0 +1,15 @@
+Started GET "/_loading/sse" for ::1 at 2022-10-08 21:55:11 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/_loading/sse"):
+  
+Started GET "/__webpack_hmr/client" for ::1 at 2022-10-08 21:55:15 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/__webpack_hmr/client"):
+  
+Started GET "/" for ::1 at 2022-10-08 21:55:17 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering vender/bundle/ruby/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered vender/bundle/ruby/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.8ms | Allocations: 361)
+Completed 200 OK in 13ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 3833)
+
+
