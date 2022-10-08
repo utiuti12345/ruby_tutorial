@@ -1,0 +1,4 @@
+{
+  "ruby.rubocop.executePath": "/Users/saotome/.rbenv/shims/",
+  "ruby.format": "rubocop"
+}
