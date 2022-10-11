@@ -1,5 +1,5 @@
 class WeightHistoriesController < ApplicationController
-  before_action :set_weight_history, only: %i[ show edit update destroy ]
+  before_action :set_weight_history, only: %i[show edit update destroy]
 
   # GET /weight_histories or /weight_histories.json
   def index
@@ -7,8 +7,7 @@ class WeightHistoriesController < ApplicationController
   end
 
   # GET /weight_histories/1 or /weight_histories/1.json
-  def show
-  end
+  def show; end
 
   # GET /weight_histories/new
   def new
@@ -16,16 +15,16 @@ class WeightHistoriesController < ApplicationController
   end
 
   # GET /weight_histories/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /weight_histories or /weight_histories.json
   def create
     @weight_history = WeightHistory.new(weight_history_params)
+    binding.pry
     if @weight_history.save
-      redirect_to weight_history_url(@weight_history), notice: "Weight history was successfully created." 
+      redirect_to weight_history_url(@weight_history), notice: 'Weight history was successfully created.'
     else
-      render :new, status: :unprocessable_entity 
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -33,7 +32,9 @@ class WeightHistoriesController < ApplicationController
   def update
     respond_to do |format|
       if @weight_history.update(weight_history_params)
-        format.html { redirect_to weight_history_url(@weight_history), notice: "Weight history was successfully updated." }
+        format.html do
+          redirect_to weight_history_url(@weight_history), notice: 'Weight history was successfully updated.'
+        end
         format.json { render :show, status: :ok, location: @weight_history }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -47,19 +48,20 @@ class WeightHistoriesController < ApplicationController
     @weight_history.destroy
 
     respond_to do |format|
-      format.html { redirect_to weight_histories_url, notice: "Weight history was successfully destroyed." }
+      format.html { redirect_to weight_histories_url, notice: 'Weight history was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_weight_history
-      @weight_history = WeightHistory.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def weight_history_params
-      params.require(:weight_history).permit(:user_id, :weight, :memo)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_weight_history
+    @weight_history = WeightHistory.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def weight_history_params
+    params.require(:weight_history).permit(:user_id, :weight, :memo)
+  end
 end

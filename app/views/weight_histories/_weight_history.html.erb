@@ -1,12 +1,12 @@
 <div id="<%= dom_id weight_history %>">
   <p>
     <strong>User:</strong>
-    <%= weight_history.user_id %>
+    <%= weight_history.user.name %>
   </p>
 
   <p>
     <strong>Weight:</strong>
-    <%= weight_history.weight %>
+    <%= weight_comment(weight_history.weight) %>
   </p>
 
   <p>
